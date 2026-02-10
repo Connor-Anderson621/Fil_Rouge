@@ -28,7 +28,7 @@ namespace Fil_Rouge
             //Form2 FenetreSecondaire = new Form2();
             this.Hide();
             FenetreSecondaire.ShowDialog();
-            if (x==0)
+            if (x == 0)
             {
                 this.Show();
             }
@@ -39,6 +39,21 @@ namespace Fil_Rouge
 
         }
 
-        
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Application.Exit();
+            this.Close();
+        }
+
+        private void ClickNotImplemented(object sender, EventArgs e)
+        {
+            MessageBox.Show("Cette fonctionnalité n'est pas encore implémentée.");
+        }
+
+        private void aProposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //aProposForm aPropos = new aProposForm();
+            aPropos.
+        }
     }
 }

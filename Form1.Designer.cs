@@ -33,8 +33,20 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             button2 = new Button();
+            menuStrip1 = new MenuStrip();
+            menuToolStripMenuItem = new ToolStripMenuItem();
+            contrôlesToolStripMenuItem = new ToolStripMenuItem();
+            listeToolStripMenuItem = new ToolStripMenuItem();
+            barreDeProgressionToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripSeparator();
+            quitterToolStripMenuItem = new ToolStripMenuItem();
+            applicationsToolStripMenuItem = new ToolStripMenuItem();
+            editeurToolStripMenuItem = new ToolStripMenuItem();
+            aideToolStripMenuItem = new ToolStripMenuItem();
+            aProposToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -79,6 +91,86 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(24, 24);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1117, 33);
+            menuStrip1.TabIndex = 4;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contrôlesToolStripMenuItem, applicationsToolStripMenuItem, aideToolStripMenuItem });
+            menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            menuToolStripMenuItem.Size = new Size(73, 29);
+            menuToolStripMenuItem.Text = "Menu";
+            // 
+            // contrôlesToolStripMenuItem
+            // 
+            contrôlesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { listeToolStripMenuItem, barreDeProgressionToolStripMenuItem, toolStripMenuItem1, quitterToolStripMenuItem });
+            contrôlesToolStripMenuItem.Name = "contrôlesToolStripMenuItem";
+            contrôlesToolStripMenuItem.Size = new Size(270, 34);
+            contrôlesToolStripMenuItem.Text = "Contrôles";
+            // 
+            // listeToolStripMenuItem
+            // 
+            listeToolStripMenuItem.Name = "listeToolStripMenuItem";
+            listeToolStripMenuItem.Size = new Size(279, 34);
+            listeToolStripMenuItem.Text = "Liste";
+            listeToolStripMenuItem.Click += ClickNotImplemented;
+            // 
+            // barreDeProgressionToolStripMenuItem
+            // 
+            barreDeProgressionToolStripMenuItem.Name = "barreDeProgressionToolStripMenuItem";
+            barreDeProgressionToolStripMenuItem.Size = new Size(279, 34);
+            barreDeProgressionToolStripMenuItem.Text = "Barre de progression";
+            barreDeProgressionToolStripMenuItem.Click += ClickNotImplemented;
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(276, 6);
+            // 
+            // quitterToolStripMenuItem
+            // 
+            quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
+            quitterToolStripMenuItem.ShortcutKeyDisplayString = "Alt + q";
+            quitterToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.Q;
+            quitterToolStripMenuItem.Size = new Size(279, 34);
+            quitterToolStripMenuItem.Text = "Quitter";
+            quitterToolStripMenuItem.Click += quitterToolStripMenuItem_Click;
+            // 
+            // applicationsToolStripMenuItem
+            // 
+            applicationsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { editeurToolStripMenuItem });
+            applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
+            applicationsToolStripMenuItem.Size = new Size(270, 34);
+            applicationsToolStripMenuItem.Text = "Applications";
+            // 
+            // editeurToolStripMenuItem
+            // 
+            editeurToolStripMenuItem.Name = "editeurToolStripMenuItem";
+            editeurToolStripMenuItem.Size = new Size(169, 34);
+            editeurToolStripMenuItem.Text = "Editeur";
+            editeurToolStripMenuItem.Click += ClickNotImplemented;
+            // 
+            // aideToolStripMenuItem
+            // 
+            aideToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aProposToolStripMenuItem });
+            aideToolStripMenuItem.Name = "aideToolStripMenuItem";
+            aideToolStripMenuItem.Size = new Size(270, 34);
+            aideToolStripMenuItem.Text = "Aide";
+            // 
+            // aProposToolStripMenuItem
+            // 
+            aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
+            aProposToolStripMenuItem.Size = new Size(270, 34);
+            aProposToolStripMenuItem.Text = "A propos";
+            aProposToolStripMenuItem.Click += aProposToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -89,12 +181,17 @@
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -103,5 +200,16 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Button button2;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem menuToolStripMenuItem;
+        private ToolStripMenuItem contrôlesToolStripMenuItem;
+        private ToolStripMenuItem applicationsToolStripMenuItem;
+        private ToolStripMenuItem aideToolStripMenuItem;
+        private ToolStripMenuItem listeToolStripMenuItem;
+        private ToolStripMenuItem barreDeProgressionToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripMenuItem quitterToolStripMenuItem;
+        private ToolStripMenuItem editeurToolStripMenuItem;
+        private ToolStripMenuItem aProposToolStripMenuItem;
     }
 }

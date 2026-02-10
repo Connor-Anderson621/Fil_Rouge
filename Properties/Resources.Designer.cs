@@ -89,5 +89,15 @@ namespace Fil_Rouge.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Visual_Studio_Icon_2022_svg {
+            get {
+                object obj = ResourceManager.GetObject("Visual_Studio_Icon_2022.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
