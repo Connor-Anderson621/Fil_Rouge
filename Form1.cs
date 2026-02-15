@@ -48,7 +48,10 @@ namespace Fil_Rouge
 
         private void ClickNotImplemented(object sender, EventArgs e)
         {
-            MessageBox.Show("Cette fonctionnalité n'est pas encore implémentée.");
+            EcranProgression Fenetre_Progression = new EcranProgression();
+            this.Hide();
+            Fenetre_Progression.ShowDialog();
+            this.Show();
         }
 
         private void aProposToolStripMenuItem_Click(object sender, EventArgs e)
