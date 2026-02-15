@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(aPropos));
             panel1 = new Panel();
+            textBox1 = new TextBox();
             pictureBox1 = new PictureBox();
             button1 = new Button();
-            textBox1 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -46,6 +46,20 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(725, 307);
             panel1.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            textBox1.AcceptsReturn = true;
+            textBox1.AcceptsTab = true;
+            textBox1.Cursor = Cursors.No;
+            textBox1.Location = new Point(249, 26);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.ScrollBars = ScrollBars.Vertical;
+            textBox1.Size = new Size(455, 255);
+            textBox1.TabIndex = 1;
+            textBox1.Text = resources.GetString("textBox1.Text");
             // 
             // pictureBox1
             // 
@@ -71,19 +85,7 @@
             button1.TabIndex = 1;
             button1.Text = "I agree to the terms and conditions";
             button1.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            textBox1.AcceptsReturn = true;
-            textBox1.AcceptsTab = true;
-            textBox1.Location = new Point(249, 26);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.ScrollBars = ScrollBars.Vertical;
-            textBox1.Size = new Size(455, 255);
-            textBox1.TabIndex = 1;
-            textBox1.Text = resources.GetString("textBox1.Text");
+            button1.Click += button1_Click;
             // 
             // aPropos
             // 

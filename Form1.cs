@@ -36,6 +36,7 @@ namespace Fil_Rouge
             {
                 this.Close();
             }
+            x = 0;
 
         }
 
@@ -53,7 +54,11 @@ namespace Fil_Rouge
         private void aProposToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //aProposForm aPropos = new aProposForm();
-            aPropos.
+            //Musique.musique();
+            aPropos Fenetre_‡Propos = new aPropos();
+            this.Hide();
+            Fenetre_‡Propos.ShowDialog();
+            this.Show();
         }
     }
 }
