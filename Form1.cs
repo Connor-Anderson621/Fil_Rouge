@@ -63,5 +63,13 @@ namespace Fil_Rouge
             Fenetre_‡Propos.ShowDialog();
             this.Show();
         }
+
+        private void listeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EcranListe Fenetre_Liste = new EcranListe();
+            this.Hide();
+            Fenetre_Liste.ShowDialog();
+            this.Show();
+        }
     }
 }

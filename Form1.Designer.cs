@@ -120,7 +120,7 @@
             listeToolStripMenuItem.Name = "listeToolStripMenuItem";
             listeToolStripMenuItem.Size = new Size(279, 34);
             listeToolStripMenuItem.Text = "Liste";
-            listeToolStripMenuItem.Click += ClickNotImplemented;
+            listeToolStripMenuItem.Click += listeToolStripMenuItem_Click;
             // 
             // barreDeProgressionToolStripMenuItem
             // 
@@ -153,7 +153,7 @@
             // editeurToolStripMenuItem
             // 
             editeurToolStripMenuItem.Name = "editeurToolStripMenuItem";
-            editeurToolStripMenuItem.Size = new Size(169, 34);
+            editeurToolStripMenuItem.Size = new Size(270, 34);
             editeurToolStripMenuItem.Text = "Editeur";
             editeurToolStripMenuItem.Click += ClickNotImplemented;
             // 
@@ -167,7 +167,7 @@
             // aProposToolStripMenuItem
             // 
             aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
-            aProposToolStripMenuItem.Size = new Size(270, 34);
+            aProposToolStripMenuItem.Size = new Size(189, 34);
             aProposToolStripMenuItem.Text = "A propos";
             aProposToolStripMenuItem.Click += aProposToolStripMenuItem_Click;
             // 
