@@ -44,6 +44,8 @@
             ofdOuvrir = new OpenFileDialog();
             sfdEnregistrer = new SaveFileDialog();
             chkbxOverwrite = new CheckBox();
+            bModifier = new Button();
+            ucModification1 = new ucModification();
             gbDetail.SuspendLayout();
             SuspendLayout();
             // 
@@ -111,9 +113,9 @@
             // 
             lbPersonne.FormattingEnabled = true;
             lbPersonne.ItemHeight = 25;
-            lbPersonne.Location = new Point(12, 28);
+            lbPersonne.Location = new Point(12, 53);
             lbPersonne.Name = "lbPersonne";
-            lbPersonne.Size = new Size(537, 179);
+            lbPersonne.Size = new Size(537, 154);
             lbPersonne.TabIndex = 6;
             lbPersonne.DoubleClick += ItemClicked;
             // 
@@ -121,7 +123,7 @@
             // 
             cbQualite.FormattingEnabled = true;
             cbQualite.Items.AddRange(new object[] { "Madame", "Monsieur", "Mademoiselle", "Flaque d'eau", "Avion de chasse", "Alien" });
-            cbQualite.Location = new Point(224, 273);
+            cbQualite.Location = new Point(6, 57);
             cbQualite.Name = "cbQualite";
             cbQualite.Size = new Size(319, 33);
             cbQualite.TabIndex = 7;
@@ -131,10 +133,11 @@
             gbDetail.Controls.Add(lNom);
             gbDetail.Controls.Add(lQualite);
             gbDetail.Controls.Add(tbNom);
+            gbDetail.Controls.Add(cbQualite);
             gbDetail.Controls.Add(bConfirmer);
             gbDetail.Controls.Add(bAnnuler);
             gbDetail.Enabled = false;
-            gbDetail.Location = new Point(218, 213);
+            gbDetail.Location = new Point(218, 224);
             gbDetail.Name = "gbDetail";
             gbDetail.Size = new Size(331, 226);
             gbDetail.TabIndex = 8;
@@ -182,7 +185,6 @@
             // chkbxOverwrite
             // 
             chkbxOverwrite.AutoSize = true;
-            chkbxOverwrite.BackColor = SystemColors.ControlLight;
             chkbxOverwrite.Location = new Point(12, 309);
             chkbxOverwrite.Name = "chkbxOverwrite";
             chkbxOverwrite.Size = new Size(114, 29);
@@ -191,20 +193,40 @@
             chkbxOverwrite.UseVisualStyleBackColor = false;
             chkbxOverwrite.CheckedChanged += checkBox1_CheckedChanged;
             // 
+            // bModifier
+            // 
+            bModifier.Location = new Point(12, 421);
+            bModifier.Name = "bModifier";
+            bModifier.Size = new Size(168, 34);
+            bModifier.TabIndex = 11;
+            bModifier.Text = "Modifier";
+            bModifier.UseVisualStyleBackColor = true;
+            bModifier.Click += bModifier_Click;
+            // 
+            // ucModification1
+            // 
+            ucModification1.Enabled = false;
+            ucModification1.Location = new Point(12, 28);
+            ucModification1.Name = "ucModification1";
+            ucModification1.Size = new Size(537, 179);
+            ucModification1.TabIndex = 12;
+            ucModification1.Visible = false;
+            // 
             // EcranListe
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(564, 451);
+            ClientSize = new Size(564, 462);
+            Controls.Add(bModifier);
             Controls.Add(chkbxOverwrite);
             Controls.Add(lFichier);
-            Controls.Add(cbQualite);
-            Controls.Add(lbPersonne);
             Controls.Add(bAjouter);
             Controls.Add(bSupprimer);
             Controls.Add(bEnregistrer);
             Controls.Add(bOuvrir);
             Controls.Add(gbDetail);
+            Controls.Add(ucModification1);
+            Controls.Add(lbPersonne);
             Name = "EcranListe";
             Text = "EcranListe";
             gbDetail.ResumeLayout(false);
@@ -221,7 +243,7 @@
         private Button bAjouter;
         private Button bConfirmer;
         private Button bAnnuler;
-        private ListBox lbPersonne;
+        public static ListBox lbPersonne;
         private ComboBox cbQualite;
         private GroupBox gbDetail;
         private TextBox tbNom;
@@ -231,5 +253,7 @@
         private OpenFileDialog ofdOuvrir;
         private SaveFileDialog sfdEnregistrer;
         private CheckBox chkbxOverwrite;
+        private Button bModifier;
+        private ucModification ucModification1;
     }
 }

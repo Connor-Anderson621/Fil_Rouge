@@ -9,6 +9,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Fil_Rouge
 {
@@ -16,9 +17,11 @@ namespace Fil_Rouge
     {
         private string NomFichier = @"C:\Users\Cyril\Documents\_Fichiers_labo1\noms.txt";
         int checkbox = 0;
+        
         public EcranListe()
         {
             InitializeComponent();
+            ucModification1.Hide();
         }
         public void Activer(int activation)
         {
@@ -120,7 +123,7 @@ namespace Fil_Rouge
             {
                 string selectedItem = lbPersonne.SelectedItem.ToString();
                 string[] parts = selectedItem.Split(new string[] { " - (" }, StringSplitOptions.None);
-                MessageBox.Show($"Nom: {parts[0]}\nQualité: {parts[1].TrimEnd(')')}\nNuméro d'index : {lbPersonne.SelectedIndex}");
+                MessageBox.Show($"Nom: {parts[0]}\nQualité: {parts[1].TrimEnd(')')}\nNuméro d'index : {lbPersonne.SelectedIndex}\nNuméro d'encodage (caché) : ");
             }
         }
 
@@ -131,7 +134,8 @@ namespace Fil_Rouge
                 lbPersonne.Items.Remove(lbPersonne.SelectedItem);
             }
             if (checkbox == 1)
-            { int lineNumber = lbPersonne.SelectedIndex;
+            {
+
                 // Source - https://stackoverflow.com/a/1245279
                 // Posted by user21926
                 // Retrieved 2026-02-17, License - CC BY-SA 2.5
@@ -167,6 +171,21 @@ namespace Fil_Rouge
             else
             {
                 checkbox = 0;
+            }
+        }
+
+        private void bModifier_Click(object sender, EventArgs e)
+        {
+            if (lbPersonne.SelectedItem != null)
+            {
+                ucModification1.Show();
+                ucModification1.Enabled=true;
+                ucModification1.cbModif.Text = lbPersonne.SelectedItem.ToString().Split(new string[] { " - (" }, StringSplitOptions.None)[1].TrimEnd(')');
+                ucModification1.tbModif.Text = lbPersonne.SelectedItem.ToString().Split(new string[] { " - (" }, StringSplitOptions.None)[0];
+            }
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner un élément à modifier.");
             }
         }
     }
