@@ -43,6 +43,7 @@
             lFichier = new Label();
             ofdOuvrir = new OpenFileDialog();
             sfdEnregistrer = new SaveFileDialog();
+            chkbxOverwrite = new CheckBox();
             gbDetail.SuspendLayout();
             SuspendLayout();
             // 
@@ -114,6 +115,7 @@
             lbPersonne.Name = "lbPersonne";
             lbPersonne.Size = new Size(537, 179);
             lbPersonne.TabIndex = 6;
+            lbPersonne.DoubleClick += ItemClicked;
             // 
             // cbQualite
             // 
@@ -177,11 +179,24 @@
             // 
             ofdOuvrir.FileName = "ofdOuvrir";
             // 
+            // chkbxOverwrite
+            // 
+            chkbxOverwrite.AutoSize = true;
+            chkbxOverwrite.BackColor = SystemColors.ControlLight;
+            chkbxOverwrite.Location = new Point(12, 309);
+            chkbxOverwrite.Name = "chkbxOverwrite";
+            chkbxOverwrite.Size = new Size(114, 29);
+            chkbxOverwrite.TabIndex = 10;
+            chkbxOverwrite.Text = "Overwrite";
+            chkbxOverwrite.UseVisualStyleBackColor = false;
+            chkbxOverwrite.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // EcranListe
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(564, 451);
+            Controls.Add(chkbxOverwrite);
             Controls.Add(lFichier);
             Controls.Add(cbQualite);
             Controls.Add(lbPersonne);
@@ -215,5 +230,6 @@
         private Label lNom;
         private OpenFileDialog ofdOuvrir;
         private SaveFileDialog sfdEnregistrer;
+        private CheckBox chkbxOverwrite;
     }
 }

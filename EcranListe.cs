@@ -15,7 +15,7 @@ namespace Fil_Rouge
     public partial class EcranListe : Form
     {
         private string NomFichier = @"C:\Users\Cyril\Documents\_Fichiers_labo1\noms.txt";
-
+        int checkbox = 0;
         public EcranListe()
         {
             InitializeComponent();
@@ -75,11 +75,24 @@ namespace Fil_Rouge
             {
                 File.Create(NomFichier).Close();
             }
-            foreach (var item in lbPersonne.Items)
+            if (checkbox == 1)
             {
-                string lignetemp = item.ToString() + Environment.NewLine;
-                System.IO.File.AppendAllText(NomFichier, lignetemp);
+                System.IO.File.WriteAllText(NomFichier, string.Empty);
+                foreach (var item in lbPersonne.Items)
+                {
+                    string lignetemp = item.ToString() + Environment.NewLine;
+                    System.IO.File.AppendAllText(NomFichier, lignetemp);
+                }
             }
+            else
+            {
+                foreach (var item in lbPersonne.Items)
+                {
+                    string lignetemp = item.ToString() + Environment.NewLine;
+                    System.IO.File.AppendAllText(NomFichier, lignetemp);
+                }
+            }
+
 
         }
 
@@ -103,10 +116,11 @@ namespace Fil_Rouge
         }
         private void ItemClicked(object sender, EventArgs e)
         {
-           if (lbPersonne.SelectedItem != null)
+            if (lbPersonne.SelectedItem != null)
             {
                 string selectedItem = lbPersonne.SelectedItem.ToString();
                 string[] parts = selectedItem.Split(new string[] { " - (" }, StringSplitOptions.None);
+                MessageBox.Show($"Nom: {parts[0]}\nQualité: {parts[1].TrimEnd(')')}\nNuméro d'index : {lbPersonne.SelectedIndex}");
             }
         }
 
@@ -115,6 +129,44 @@ namespace Fil_Rouge
             if (lbPersonne.SelectedItem != null)
             {
                 lbPersonne.Items.Remove(lbPersonne.SelectedItem);
+            }
+            if (checkbox == 1)
+            { int lineNumber = lbPersonne.SelectedIndex;
+                // Source - https://stackoverflow.com/a/1245279
+                // Posted by user21926
+                // Retrieved 2026-02-17, License - CC BY-SA 2.5
+                if (lbPersonne.SelectedItem != null)
+                {
+                    string line = null;
+                    string line_to_delete = lbPersonne.SelectedItem.ToString();
+
+                    using (StreamReader reader = new StreamReader("C:\\input"))
+                    {
+                        using (StreamWriter writer = new StreamWriter("C:\\output"))
+                        {
+                            while ((line = reader.ReadLine()) != null)
+                            {
+                                if (String.Compare(line, line_to_delete) == 0)
+                                    continue;
+
+                                writer.WriteLine(line);
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkbxOverwrite.Checked)
+            {
+                checkbox = 1;
+            }
+            else
+            {
+                checkbox = 0;
             }
         }
     }
