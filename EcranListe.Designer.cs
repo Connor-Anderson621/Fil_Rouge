@@ -46,6 +46,7 @@
             chkbxOverwrite = new CheckBox();
             bModifier = new Button();
             ucModification1 = new ucModification();
+            bTri = new Button();
             gbDetail.SuspendLayout();
             SuspendLayout();
             // 
@@ -212,11 +213,22 @@
             ucModification1.TabIndex = 12;
             ucModification1.Visible = false;
             // 
+            // bTri
+            // 
+            bTri.Location = new Point(383, 13);
+            bTri.Name = "bTri";
+            bTri.Size = new Size(112, 34);
+            bTri.TabIndex = 13;
+            bTri.Text = "Trier";
+            bTri.UseVisualStyleBackColor = true;
+            bTri.Click += bTri_Click;
+            // 
             // EcranListe
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(564, 462);
+            Controls.Add(bTri);
             Controls.Add(bModifier);
             Controls.Add(chkbxOverwrite);
             Controls.Add(lFichier);
@@ -243,7 +255,6 @@
         private Button bAjouter;
         private Button bConfirmer;
         private Button bAnnuler;
-        public static ListBox lbPersonne;
         private ComboBox cbQualite;
         private GroupBox gbDetail;
         private TextBox tbNom;
@@ -255,5 +266,7 @@
         private CheckBox chkbxOverwrite;
         private Button bModifier;
         private ucModification ucModification1;
+        public ListBox lbPersonne;
+        private Button bTri;
     }
 }
