@@ -168,7 +168,7 @@ namespace Fil_Rouge
                 MessageBox.Show($"Nom: {parts[0]}\nQualité: {parts[1].TrimEnd(')')}\nNuméro d'index : {lbPersonne.SelectedIndex}\nNuméro d'encodage (caché) : {donneeCachee}");
             }
         }
-
+//Corrections compte github
         private void bSupprimer_Click(object sender, EventArgs e)
         {
 
