@@ -80,7 +80,7 @@ namespace Fil_Rouge
 
             foreach (string ligne in File.ReadAllLines(ofdOuvrir.FileName))
             {
-                string[] p = ligne.Split(';');
+                string[] p = ligne.Split('#');
                 int i = lbPersonne.Items.Add(p[0]);
                 SendMessage(lbPersonne.Handle, smEcrire, i, int.Parse(p[1]));
             }
@@ -104,7 +104,7 @@ namespace Fil_Rouge
                 foreach (var item in lbPersonne.Items)
                 {
                     int idUnique = SendMessage(lbPersonne.Handle, smLire, i, 0);
-                    string ligneFichier = item.ToString() + ";" + idUnique;
+                    string ligneFichier = item.ToString() + "#" + idUnique;
                     System.IO.File.AppendAllText(NomFichier, ligneFichier + Environment.NewLine);
                     i++;
 
@@ -119,7 +119,7 @@ namespace Fil_Rouge
                 foreach (var item in lbPersonne.Items)
                 {
                     int idUnique = SendMessage(lbPersonne.Handle, smLire, i, 0);
-                    string ligneFichier = item.ToString() + ";" + idUnique;
+                    string ligneFichier = item.ToString() + "#" + idUnique;
                     System.IO.File.AppendAllText(NomFichier, ligneFichier + Environment.NewLine);
                     i++;
 
@@ -171,11 +171,25 @@ namespace Fil_Rouge
 
         private void bSupprimer_Click(object sender, EventArgs e)
         {
-            //J'ai fais le choix de faire en sorte que le bouton supprimer overwrite par défaut, car je trouvais ça un peu inutile qu'il ne le fasse pas.
+
             if (lbPersonne.SelectedItem != null)
             {
+                int idSupprime = SendMessage(lbPersonne.Handle, smLire, lbPersonne.SelectedIndex, 0);
+
                 lbPersonne.Items.Remove(lbPersonne.SelectedItem);
+
+                for (int i = 0; i < lbPersonne.Items.Count; i++)
+                {
+                    int currentId = SendMessage(lbPersonne.Handle, smLire, i, 0);
+                    if (currentId > idSupprime)
+                    {
+                        SendMessage(lbPersonne.Handle, smEcrire, i, currentId - 1);
+                    }
+                }
+                numEncodage--;
             }
+
+        
             if (checkbox == 1)
             {
 
