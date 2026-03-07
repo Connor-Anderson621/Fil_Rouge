@@ -48,12 +48,7 @@ namespace Fil_Rouge
 
         private void ClickNotImplemented(object sender, EventArgs e)
         {
-            // Source - https://stackoverflow.com/a/1806255
-            // Posted by Alex J, modified by community. See post 'Timeline' for change history
-            // Retrieved 2026-03-03, License - CC BY-SA 3.0
-
             System.Windows.Forms.MessageBox.Show("Non implémenté");
-
         }
 
         private void aProposToolStripMenuItem_Click(object sender, EventArgs e)
