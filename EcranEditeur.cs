@@ -25,8 +25,24 @@ namespace Fil_Rouge
 
         }
 
-        private void FichierEnregistrer()
+        private bool FichierEnregistrer()
         {
+            if (string.IsNullOrEmpty(sFichier))
+            {
+                if (sfdEnregistrer.ShowDialog() == DialogResult.OK)
+                {
+                    sFichier = sfdEnregistrer.FileName;
+                }
+                else
+                {
+                    return false; 
+                }
+            }
+            rtbTexte.SaveFile(sFichier);
+            bModifier = false;
+            return true;
+
+            /*
             string TextToWrite = rtbTexte.Text;
             if (sFichier is null)
             {
@@ -39,23 +55,31 @@ namespace Fil_Rouge
                 File.Create(sFichier).Close();
             }
             System.IO.File.WriteAllText(sFichier, TextToWrite);
+            bModifier = false;
+            */
 
         }
 
-        private void VerifierSauver()
+        private bool VerifierSauver()
         {
-            if (bModifier)
+            if (bModifier==true)
             {
                 DialogResult reponse = MessageBox.Show("Voulez-vous enregistrer les modifications ?",
                                                        "Enregistrement",
-                                                       MessageBoxButtons.YesNo,
+                                                       MessageBoxButtons.YesNoCancel,
                                                        MessageBoxIcon.Question);
 
                 if (reponse == DialogResult.Yes)
                 {
-                    FichierEnregistrer();
+                    return FichierEnregistrer();
                 }
+                else if (reponse == DialogResult.No)
+                {
+                    return true; 
+                }
+                else { return false; }
             }
+            return true;
         }
 
         private void rtbTexte_TextChanged(object sender, EventArgs e)
@@ -112,23 +136,101 @@ namespace Fil_Rouge
             if (rtbTexte.SelectionFont != null)
             {
                 fdPolice.ShowDialog();
+                rtbTexte.SelectionFont = fdPolice.Font;
             }
-
-        }
-
-        private void droiteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
         }
 
         private void pbNouveau_Click(object sender, EventArgs e)
         {
 
+            if (VerifierSauver())
+            {
+                rtbTexte.Clear(); 
+                sFichier = null; 
+                bModifier = false; 
+            }
+
+            /*
+            if (string.IsNullOrEmpty(rtbTexte.Text))
+            {
+                bModifier = false;
+            }
+            VerifierSauver();
+            if (VerifierSauver.Dialogresult) 
+            {
+                rtbTexte.Text = string.Empty;
+            }
+            */
         }
 
         private void pbEnregistrer_Click(object sender, EventArgs e)
         {
             FichierEnregistrer();
+        }
+
+        private void pbOuvrir_Click(object sender, EventArgs e)
+        {
+            if (VerifierSauver())
+            {
+                if (ofdOuvrir.ShowDialog() == DialogResult.OK)
+                {
+                    sFichier = ofdOuvrir.FileName;
+                    rtbTexte.LoadFile(sFichier);
+                    bModifier = false;
+                }
+            }
+
+
+
+            /*
+            if (VerifierSauver() == false)
+            { ofdOuvrir.ShowDialog(); }
+            if (ofdOuvrir.FileName != "") 
+            { 
+                string contenuFichier = File.ReadAllText(ofdOuvrir.FileName);
+                rtbTexte.Text = contenuFichier;
+            }
+            */
+
+        }
+
+        private void pbQuitter_Click(object sender, EventArgs e)
+        {
+            if (VerifierSauver() == true)
+            {
+                this.Close();
+            }
+        }
+
+        private void gaucheToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbTexte.SelectionAlignment = HorizontalAlignment.Left;
+        }
+
+        private void centreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbTexte.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
+        private void droiteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbTexte.SelectionAlignment = HorizontalAlignment.Right;
+        }
+
+        private void copierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbTexte.Copy();
+        }
+
+        private void couperToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbTexte.Cut();
+        }
+
+        private void collerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbTexte.Paste();
         }
     }
 }
