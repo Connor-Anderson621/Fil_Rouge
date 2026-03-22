@@ -84,5 +84,13 @@ namespace Fil_Rouge
             Fenetre_Editeur.ShowDialog();
             this.Show();
         }
+
+        private void graphToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EcranSpirographe FicSpirographe = new EcranSpirographe();
+            this.Hide();
+            FicSpirographe.ShowDialog();
+            this.Show();
+        }
     }
 }
