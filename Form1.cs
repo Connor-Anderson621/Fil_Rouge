@@ -92,5 +92,13 @@ namespace Fil_Rouge
             FicSpirographe.ShowDialog();
             this.Show();
         }
+
+        private void keyLoggerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EcranClavierSouris FicClavierSouris = new EcranClavierSouris();
+            this.Hide();
+            FicClavierSouris.ShowDialog();
+            this.Show();
+        }
     }
 }
