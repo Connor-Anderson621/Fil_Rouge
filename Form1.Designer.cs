@@ -46,6 +46,7 @@
             aProposToolStripMenuItem = new ToolStripMenuItem();
             graphToolStripMenuItem = new ToolStripMenuItem();
             keyLoggerToolStripMenuItem = new ToolStripMenuItem();
+            russianExplorerexeToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             menuStrip1.SuspendLayout();
@@ -110,7 +111,7 @@
             // 
             // menuToolStripMenuItem
             // 
-            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contrôlesToolStripMenuItem, applicationsToolStripMenuItem, aideToolStripMenuItem, graphToolStripMenuItem, keyLoggerToolStripMenuItem });
+            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contrôlesToolStripMenuItem, applicationsToolStripMenuItem, aideToolStripMenuItem, graphToolStripMenuItem, keyLoggerToolStripMenuItem, russianExplorerexeToolStripMenuItem });
             menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             menuToolStripMenuItem.Size = new Size(60, 24);
             menuToolStripMenuItem.Text = "Menu";
@@ -192,6 +193,13 @@
             keyLoggerToolStripMenuItem.Text = "KeyLogger";
             keyLoggerToolStripMenuItem.Click += keyLoggerToolStripMenuItem_Click;
             // 
+            // russianExplorerexeToolStripMenuItem
+            // 
+            russianExplorerexeToolStripMenuItem.Name = "russianExplorerexeToolStripMenuItem";
+            russianExplorerexeToolStripMenuItem.Size = new Size(224, 26);
+            russianExplorerexeToolStripMenuItem.Text = "RussianExplorer.exe";
+            russianExplorerexeToolStripMenuItem.Click += russianExplorerexeToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -235,5 +243,6 @@
         private ToolStripMenuItem aProposToolStripMenuItem;
         private ToolStripMenuItem graphToolStripMenuItem;
         private ToolStripMenuItem keyLoggerToolStripMenuItem;
+        private ToolStripMenuItem russianExplorerexeToolStripMenuItem;
     }
 }

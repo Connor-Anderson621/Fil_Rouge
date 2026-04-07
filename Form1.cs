@@ -100,5 +100,13 @@ namespace Fil_Rouge
             FicClavierSouris.ShowDialog();
             this.Show();
         }
+
+        private void russianExplorerexeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EcranExplorateur FicExplorateur = new EcranExplorateur();
+            this.Hide();
+            FicExplorateur.ShowDialog();
+            this.Show();
+        }
     }
 }
