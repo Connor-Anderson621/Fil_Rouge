@@ -108,5 +108,13 @@ namespace Fil_Rouge
             FicExplorateur.ShowDialog();
             this.Show();
         }
+
+        private void histogrammeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EcranHistogramme FicHistogramme = new EcranHistogramme();
+            this.Hide();
+            FicHistogramme.ShowDialog();
+            this.Show();
+        }
     }
 }
