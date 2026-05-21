@@ -33,7 +33,7 @@
             lNbInt = new Label();
             tbGauche = new TextBox();
             tbDroite = new TextBox();
-            TbNbInt = new TextBox();
+            tbNbInt = new TextBox();
             lbResultats = new ListBox();
             bPolynome = new Button();
             bTrigonometrique = new Button();
@@ -82,12 +82,12 @@
             tbDroite.Size = new Size(100, 27);
             tbDroite.TabIndex = 4;
             // 
-            // TbNbInt
+            // tbNbInt
             // 
-            TbNbInt.Location = new Point(267, 32);
-            TbNbInt.Name = "TbNbInt";
-            TbNbInt.Size = new Size(100, 27);
-            TbNbInt.TabIndex = 5;
+            tbNbInt.Location = new Point(267, 32);
+            tbNbInt.Name = "tbNbInt";
+            tbNbInt.Size = new Size(100, 27);
+            tbNbInt.TabIndex = 5;
             // 
             // lbResultats
             // 
@@ -105,6 +105,7 @@
             bPolynome.TabIndex = 7;
             bPolynome.Text = "Polynome : x * x +2";
             bPolynome.UseVisualStyleBackColor = true;
+            bPolynome.Click += bPolynome_Click;
             // 
             // bTrigonometrique
             // 
@@ -114,6 +115,7 @@
             bTrigonometrique.TabIndex = 8;
             bTrigonometrique.Text = "Trigonométrique : sin(x)";
             bTrigonometrique.UseVisualStyleBackColor = true;
+            bTrigonometrique.Click += bTrigonometrique_Click;
             // 
             // bPointeurPolynome
             // 
@@ -123,6 +125,7 @@
             bPointeurPolynome.TabIndex = 9;
             bPointeurPolynome.Text = "Idem Pointeur";
             bPointeurPolynome.UseVisualStyleBackColor = true;
+            bPointeurPolynome.Click += bPointeurPolynome_Click;
             // 
             // bPointeurTrigonometrique
             // 
@@ -132,6 +135,7 @@
             bPointeurTrigonometrique.TabIndex = 10;
             bPointeurTrigonometrique.Text = "Idem Pointeur";
             bPointeurTrigonometrique.UseVisualStyleBackColor = true;
+            bPointeurTrigonometrique.Click += bPointeurTrigonometrique_Click;
             // 
             // EcranIntégration
             // 
@@ -143,7 +147,7 @@
             Controls.Add(bTrigonometrique);
             Controls.Add(bPolynome);
             Controls.Add(lbResultats);
-            Controls.Add(TbNbInt);
+            Controls.Add(tbNbInt);
             Controls.Add(tbDroite);
             Controls.Add(tbGauche);
             Controls.Add(lNbInt);
@@ -162,7 +166,7 @@
         private Label lNbInt;
         private TextBox tbGauche;
         private TextBox tbDroite;
-        private TextBox TbNbInt;
+        private TextBox tbNbInt;
         private ListBox lbResultats;
         private Button bPolynome;
         private Button bTrigonometrique;
