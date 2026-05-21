@@ -48,6 +48,7 @@
             keyLoggerToolStripMenuItem = new ToolStripMenuItem();
             russianExplorerexeToolStripMenuItem = new ToolStripMenuItem();
             histogrammeToolStripMenuItem = new ToolStripMenuItem();
+            intégrationDélégateToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             menuStrip1.SuspendLayout();
@@ -112,7 +113,7 @@
             // 
             // menuToolStripMenuItem
             // 
-            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contrôlesToolStripMenuItem, applicationsToolStripMenuItem, aideToolStripMenuItem, graphToolStripMenuItem, keyLoggerToolStripMenuItem, russianExplorerexeToolStripMenuItem, histogrammeToolStripMenuItem });
+            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contrôlesToolStripMenuItem, applicationsToolStripMenuItem, aideToolStripMenuItem, graphToolStripMenuItem, keyLoggerToolStripMenuItem, russianExplorerexeToolStripMenuItem, histogrammeToolStripMenuItem, intégrationDélégateToolStripMenuItem });
             menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             menuToolStripMenuItem.Size = new Size(60, 24);
             menuToolStripMenuItem.Text = "Menu";
@@ -121,7 +122,7 @@
             // 
             contrôlesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { listeToolStripMenuItem, barreDeProgressionToolStripMenuItem, toolStripMenuItem1, quitterToolStripMenuItem });
             contrôlesToolStripMenuItem.Name = "contrôlesToolStripMenuItem";
-            contrôlesToolStripMenuItem.Size = new Size(224, 26);
+            contrôlesToolStripMenuItem.Size = new Size(240, 26);
             contrôlesToolStripMenuItem.Text = "Contrôles";
             // 
             // listeToolStripMenuItem
@@ -156,7 +157,7 @@
             // 
             applicationsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { editeurToolStripMenuItem });
             applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
-            applicationsToolStripMenuItem.Size = new Size(224, 26);
+            applicationsToolStripMenuItem.Size = new Size(240, 26);
             applicationsToolStripMenuItem.Text = "Applications";
             // 
             // editeurToolStripMenuItem
@@ -170,7 +171,7 @@
             // 
             aideToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aProposToolStripMenuItem });
             aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-            aideToolStripMenuItem.Size = new Size(224, 26);
+            aideToolStripMenuItem.Size = new Size(240, 26);
             aideToolStripMenuItem.Text = "Aide";
             // 
             // aProposToolStripMenuItem
@@ -183,30 +184,37 @@
             // graphToolStripMenuItem
             // 
             graphToolStripMenuItem.Name = "graphToolStripMenuItem";
-            graphToolStripMenuItem.Size = new Size(224, 26);
+            graphToolStripMenuItem.Size = new Size(240, 26);
             graphToolStripMenuItem.Text = "Graph";
             graphToolStripMenuItem.Click += graphToolStripMenuItem_Click;
             // 
             // keyLoggerToolStripMenuItem
             // 
             keyLoggerToolStripMenuItem.Name = "keyLoggerToolStripMenuItem";
-            keyLoggerToolStripMenuItem.Size = new Size(224, 26);
+            keyLoggerToolStripMenuItem.Size = new Size(240, 26);
             keyLoggerToolStripMenuItem.Text = "KeyLogger";
             keyLoggerToolStripMenuItem.Click += keyLoggerToolStripMenuItem_Click;
             // 
             // russianExplorerexeToolStripMenuItem
             // 
             russianExplorerexeToolStripMenuItem.Name = "russianExplorerexeToolStripMenuItem";
-            russianExplorerexeToolStripMenuItem.Size = new Size(224, 26);
+            russianExplorerexeToolStripMenuItem.Size = new Size(240, 26);
             russianExplorerexeToolStripMenuItem.Text = "RussianExplorer.exe";
             russianExplorerexeToolStripMenuItem.Click += russianExplorerexeToolStripMenuItem_Click;
             // 
             // histogrammeToolStripMenuItem
             // 
             histogrammeToolStripMenuItem.Name = "histogrammeToolStripMenuItem";
-            histogrammeToolStripMenuItem.Size = new Size(224, 26);
+            histogrammeToolStripMenuItem.Size = new Size(240, 26);
             histogrammeToolStripMenuItem.Text = "Histogramme";
             histogrammeToolStripMenuItem.Click += histogrammeToolStripMenuItem_Click;
+            // 
+            // intégrationDélégateToolStripMenuItem
+            // 
+            intégrationDélégateToolStripMenuItem.Name = "intégrationDélégateToolStripMenuItem";
+            intégrationDélégateToolStripMenuItem.Size = new Size(240, 26);
+            intégrationDélégateToolStripMenuItem.Text = "Intégration - Délégate";
+            intégrationDélégateToolStripMenuItem.Click += intégrationDélégateToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -253,5 +261,6 @@
         private ToolStripMenuItem keyLoggerToolStripMenuItem;
         private ToolStripMenuItem russianExplorerexeToolStripMenuItem;
         private ToolStripMenuItem histogrammeToolStripMenuItem;
+        private ToolStripMenuItem intégrationDélégateToolStripMenuItem;
     }
 }

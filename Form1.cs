@@ -116,5 +116,13 @@ namespace Fil_Rouge
             FicHistogramme.ShowDialog();
             this.Show();
         }
+
+        private void intégrationDélégateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EcranIntégration FicIntegration = new EcranIntégration();
+            this.Hide();
+            FicIntegration.ShowDialog();
+            this.Show();
+        }
     }
 }
